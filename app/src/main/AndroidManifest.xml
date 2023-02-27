@@ -20,10 +20,10 @@
             android:name=".mixes"
             android:exported="false" />
         <activity
-            android:name=".MaterialsActivity"
+            android:name=".ui.matrials.MaterialsActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

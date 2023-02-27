@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/tv_material"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="TextView" />
@@ -18,22 +20,22 @@
         android:id="@+id/tv_protein_ratio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:text="TextView"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toStartOf="@+id/tv_material"
-        app:layout_constraintTop_toTopOf="@+id/tv_material" />
+        app:layout_constraintTop_toTopOf="@+id/tv_material"
+        tools:text="TextView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edt_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:inputType="number" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text=""
         app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="parent"

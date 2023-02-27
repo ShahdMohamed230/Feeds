@@ -1,4 +1,4 @@
-package com.example.feeds
+package com.example.feeds.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,14 @@ import android.util.Log
 import android.util.Patterns
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.feeds.ui.matrials.MaterialsActivity
+import com.example.feeds.R
+import com.example.feeds.User
 import com.example.feeds.databinding.ActivityLoginBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.util.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -55,12 +57,14 @@ class LoginActivity : AppCompatActivity() {
         currentVisibleView = LOGIN
         binding.inputName.visibility = View.GONE
         binding.inputPassConf.visibility = View.GONE
+        binding.inputAddress.visibility = View.GONE
     }
 
     private fun makeVisibleSignup() {
         currentVisibleView = SIGNUP
         binding.inputName.visibility = View.VISIBLE
         binding.inputPassConf.visibility = View.VISIBLE
+        binding.inputAddress.visibility = View.VISIBLE
     }
 
     private fun login() {
@@ -80,6 +84,7 @@ class LoginActivity : AppCompatActivity() {
         val password: String = binding.edtPass.text.toString()
         val address: String = binding.edtAddress.text.toString()
         mAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
+            Log.i(TAG, "DONE")
             it.user?.uid?.let { it1 ->
                 mDatabase.child("users").child(it1).setValue(User(email, password, address))
                     .addOnSuccessListener {
