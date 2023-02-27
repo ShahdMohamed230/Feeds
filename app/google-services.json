@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "228030870531",
+    "firebase_url": "https://criativa-alaf-default-rtdb.firebaseio.com",
+    "project_id": "criativa-alaf",
+    "storage_bucket": "criativa-alaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228030870531:android:c1f8fbd81558056a450a36",
+        "android_client_info": {
+          "package_name": "com.example.feeds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228030870531-e91v2ar3iu60hvhj58om6b47t5r65tt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRjIpqu6L88KNGWlW60On6UHI0H2wkZA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228030870531-e91v2ar3iu60hvhj58om6b47t5r65tt4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
