@@ -10,5 +10,8 @@ class MaterialsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMaterialsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.apply {
+            recyclerView1.adapter=DataAdapter1(Data.getMaterial())
+        }
     }
 }

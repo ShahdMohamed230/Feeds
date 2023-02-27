@@ -3,16 +3,21 @@ package com.example.feeds
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feeds.databinding.ActivityLoginBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.*
 
 class LoginActivity : AppCompatActivity() {
+
+    private val TAG = "LoginActivity"
+
     lateinit var binding: ActivityLoginBinding
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mDatabase: DatabaseReference
@@ -26,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.apply {
 
+            FirebaseApp.initializeApp(root.context)
             mAuth = FirebaseAuth.getInstance()
             mDatabase = FirebaseDatabase.getInstance().reference
 
@@ -80,6 +86,8 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(Intent(binding.root.context, MaterialsActivity::class.java))
                     }
             }
+        }.addOnFailureListener {
+            Log.i(TAG,it.message.toString())
         }
     }
 
