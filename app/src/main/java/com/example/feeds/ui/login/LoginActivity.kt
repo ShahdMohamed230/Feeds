@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
 
+
     private val TAG = "LoginActivity"
 
     lateinit var binding: ActivityLoginBinding
@@ -31,7 +32,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.apply {
+        binding.btnLogin.setOnClickListener {
+
+            startActivity(Intent(binding.root.context,MaterialsActivity ::class.java))
+        }
+     /*   binding.apply {
 
             FirebaseApp.initializeApp(root.context)
             mAuth = FirebaseAuth.getInstance()
@@ -147,6 +152,6 @@ class LoginActivity : AppCompatActivity() {
             binding.inputPass.error = getString(R.string.pass_alert)
             valid = false
         }
-        return valid
+        return valid*/
     }
 }

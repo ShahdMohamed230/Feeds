@@ -16,7 +16,7 @@ class MaterialsActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.apply {
             viewModel = ViewModelProvider(this@MaterialsActivity)[MaterialsViewModel::class.java]
-            recyclerView1.adapter = MaterialsAdapter(Data.getMaterial(), viewModel)
+            recyclerViewMaterials.adapter = MaterialsAdapter(Data.getMaterial(), viewModel)
 
             viewModel.size.value = 1000
             viewModel.price.value = 0
